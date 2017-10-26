@@ -30,7 +30,7 @@ public class Main {
     }
 
     private void startModule() {
-        log.info("ReuseModule started...");
+        log.info("Module started...");
         Node moduleConfigNode = null;
         try {
             Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder()
@@ -49,7 +49,7 @@ public class Main {
         log.info("Reusable module started...");
         Configuration config = null;
         try {
-            config = new XMLConfiguration(ReuseModule.class.getResourceAsStream("xml-config.xml"));
+            config = new XMLConfiguration(ReuseModule.class.getClassLoader().getResourceAsStream("xml-config.xml"));
 
         } catch (BadXMLConfigurationException ex) {
             // handling exception
